@@ -24,3 +24,9 @@ y_pred = classifier.predict(X_test)
 from sklearn.metrics import accuracy_score
 score = accuracy_score(y_test, y_pred)
 print(score)
+
+# create a pickle file using serialization
+import pickle
+pickle_out = open('bank_note_classifier.pkl', 'wb')
+pickle.dump(classifier, pickle_out)
+pickle_out.close()
